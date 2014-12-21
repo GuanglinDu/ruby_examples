@@ -1,3 +1,5 @@
+# Dave Thomas -- Programming-Ruby-1.9&2.0
+
 class Roman
   MAX_ROMAN = 4999
 
@@ -16,9 +18,17 @@ class Roman
     value = @value
     roman = ""
     
+    #sum = 0
     for code, factor in FACTORS
       count, value = value.divmod(factor)
-      roman << code unless count.zero?
+      # See http://www.tutorialspoint.com/ruby/ruby_operators.htm
+      # http://stackoverflow.com/questions/9201256/what-does-exactly-do-in-ruby
+      #roman << code unless count.zero? # bug-prone
+      roman << (code * count) # count*code doesn't work
+      
+      # Used to understand how this for look work
+      #sum += 1
+      #puts "#{sum}	#{code},	#{factor},	#{count},	#{value}:	#{roman}"
     end
     
     roman
