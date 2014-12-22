@@ -26,7 +26,7 @@ class Roman
       #roman << code unless count.zero? # bug-prone
       roman << (code * count) # count*code doesn't work
       
-      # Used to understand how this for look work
+      # Used to understand how this for look works
       #sum += 1
       #puts "#{sum}	#{code},	#{factor},	#{count},	#{value}:	#{roman}"
     end
