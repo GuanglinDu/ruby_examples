@@ -3,7 +3,6 @@
 # http://rubylearning.com/blog/2011/07/28/how-do-i-test-my-code-with-minitest/
 
 class CashRegister
-
   def initialize
      @items = []
    end
@@ -18,7 +17,7 @@ class CashRegister
    end
    
 	def i_love_u
-		return false
+		return true
 	end
 
 	def sum(x, y)
