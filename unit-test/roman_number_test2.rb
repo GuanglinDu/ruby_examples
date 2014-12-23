@@ -25,6 +25,5 @@ class TestRoman < MiniTest::Unit::TestCase
 		# but an exception for these
 		assert_raises(RuntimeError) { Roman.new(0) }
 		assert_raises(RuntimeError) { Roman.new(5000) }
-end
-	
+	end
 end

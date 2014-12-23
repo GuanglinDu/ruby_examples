@@ -1,7 +1,7 @@
 # See Chapter 8 More About Methods, Programming Ruby 1.9 & 2.0
 
 # Variable-Length Argument List using asterisk * 
-# *rest is Array object
+# *rest is an Array object
 puts "---  Variable-Length Argument List ---"
 def varargs(arg1, *rest)
 	#puts "rest.class = #{rest.class}"
