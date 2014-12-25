@@ -12,7 +12,7 @@ class Phonograph
 		self.str = name
 	end
 	
-	#Override Object.to_s
+	# Overrides Object.to_s
 	def to_s
 		return str
 	end

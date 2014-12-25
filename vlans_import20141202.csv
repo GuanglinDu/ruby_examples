@@ -1,0 +1,3 @@
+lan_name,vlan_number,vlan_name,static_ip_start,static_ip_end,subnet_mask,gateway,vlan_description
+Legacy LAN,23,VLAN_23,192.168.4.0,192.168.4.256,255.255.255.0,192.168.4.254,Storey 3 of Building DC
+Legacy LAN,24,VLAN_24,192.168.5.0,192.168.5.256,255.255.255.0,192.168.5.254,Storey 4 of Building DC
