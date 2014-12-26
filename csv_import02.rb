@@ -11,16 +11,7 @@ def import(file, options = {})
 	CSV.foreach(file, headers: true) do |row|
 		puts "row is type of #{row.class}"
 		vlan_hash = row.to_hash
-		# Add lan_id key & value
-		#vlan_hash[:lan_id] = options[:lan_id]
-		#vlan = Vlan.where(id: vlan_hash["id"])
 		puts vlan_hash
-		
-      #~ if vlan.count == 1
-        #~ vlan.first.update_attributes(vlan_hash)
-      #~ else
-        #Vlan.create!(:lan_id => 12, vlan_hash)
-        #Vlan.create!(vlan_hash)
     end
 end
 

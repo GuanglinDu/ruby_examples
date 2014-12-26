@@ -21,7 +21,11 @@ class LoveRuby
 	def self.say_hi2
 		puts "Hi, I'm a class method, too"
 		# Calls a class method from within this class method
+		say_hi
+		# or
 		self.say_hi
+		# or
+		LoveRuby.say_hi
 	end
 end
 
