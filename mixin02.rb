@@ -26,6 +26,7 @@ class EightTrack
 	
 	def initialize(name)
 		self.str = name
+		do_something # defined in module Debug
 	end
 
 	def to_s
@@ -36,6 +37,7 @@ end
 
 
 ph = Phonograph.new("West End Blues")
-et = EightTrack.new("Surrealistic Pillow")
 puts ph.who_am_i? #"Phonograph (#935520): West End Blues"
+
+et = EightTrack.new("Surrealistic Pillow")
 puts et.who_am_i? #"EightTrack (#935500): Surrealistic Pillow"
