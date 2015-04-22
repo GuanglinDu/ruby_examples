@@ -7,7 +7,10 @@
 require_relative "tennis_scorer"
 
 describe "TennisScorer", "basic scoring" do
-    
+  def setup
+    TennisScorer.new
+  end
+   
    it "should start with a score of 0-0" do
      ts = TennisScorer.new
     #ts.score.should == "0-0" # deprecated style
@@ -21,4 +24,9 @@ describe "TennisScorer", "basic scoring" do
   
   it "should be 0-15 if the receiver wins a point"
   it "should be 15-15 after they both win a point"
+  
+  it "should be 0 if calling method sum with default args" do
+    ts = setup
+    expect(ts.sum) == 0
+  end
 end

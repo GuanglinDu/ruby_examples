@@ -4,7 +4,7 @@ class Roman
   MAX_ROMAN = 4999
 
   def initialize(value)
-    if value <= 0 || value > MAX_ROMAN
+    if value <= 0 || value > MAX_ROMAN # || = or
       fail "Roman values must be > 0 and <= #{MAX_ROMAN}"
     end
     @value = value
@@ -34,3 +34,7 @@ class Roman
     roman
   end
 end
+
+# Tests
+#r1 = Roman.new(5000)
+#puts r1.to_s

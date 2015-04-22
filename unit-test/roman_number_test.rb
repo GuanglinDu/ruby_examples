@@ -14,4 +14,9 @@ class TestRoman < MiniTest::Unit::TestCase
     assert_equal("ix", Roman.new(9).to_s)
     assert_equal("xxi", Roman.new(21).to_s)
   end
+  
+  def test_complex
+    assert("xxi" == Roman.new(21).to_s)
+	assert("xi" == Roman.new(21).to_s)
+  end
 end

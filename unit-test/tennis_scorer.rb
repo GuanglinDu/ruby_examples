@@ -1,4 +1,4 @@
-# unittesting/bdd/2/tennis_scorer.rb
+# tennis_scorer.rb
 
 class TennisScorer
   def score
@@ -8,4 +8,8 @@ class TennisScorer
   def win
     "15-0"
   end
+  
+  def sum(a = 0, b = 0)
+    a + b
+  end	
 end
