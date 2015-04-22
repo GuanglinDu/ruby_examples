@@ -2,9 +2,9 @@
 # Jun. 16, 2009
 
 def three_times
-	yield
-	yield
-	yield	
+  yield
+  yield
+  yield  
 end
 
 def call_block
@@ -16,11 +16,11 @@ end
 
 #Writing iterators
 def f(count, &block)
-	value = 1
-	1.upto(count) do |i|
-		value = value * i
-		block.call(i, value)
-	end
+  value = 1
+  1.upto(count) do |i|
+    value = value * i
+    block.call(i, value)
+  end
 end
 
 #Block example
@@ -29,23 +29,23 @@ three_times { puts "Hello"}
 call_block { puts "In the block" }
 
 f(5) do |i, f_i|
-	puts "f(#{i}) = #{f_i}"
+  puts "f(#{i}) = #{f_i}"
 end
 
 #2nd block example from Programming Ruby, 1st edition.
 puts "\n--- Block demo 2 ---\n"
 def call_block
-	yield
-	yield
+  yield
+  yield
 end
 call_block { puts "In the block" }
 
 def fib_up_to(max)
-	i1, i2 = 1, 1 #parallel assignment
-	while i1 <= max
-		yield i1
-		i1, i2 = i2, i1+i2
-	end
+  i1, i2 = 1, 1 #parallel assignment
+  while i1 <= max
+    yield i1
+    i1, i2 = i2, i1+i2
+  end
 end
 
 fib_up_to(1000) { |f| print f, " " }

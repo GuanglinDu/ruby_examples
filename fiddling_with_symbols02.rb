@@ -1,5 +1,5 @@
-know_ruby = :yes
-if know_ruby == :yes
+   = :yes
+if    == :yes
 	puts 'You are a Rubyist'
 else
 	puts "Start learning Ruby"

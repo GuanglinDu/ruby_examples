@@ -1,4 +1,4 @@
-require 'csv'
+   'csv'
 
 # Import a csv file into table vlans
 # Check to see if the VLAN already exists in the database. if it does,
