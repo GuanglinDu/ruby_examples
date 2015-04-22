@@ -4,18 +4,18 @@
 require './class_is_open02'
 
 class ClassIsOpen01
-	
-	def saySomething(sth)
-		puts "saySomething: #{sth}"
-	end
-	
+  
+  def saySomething(sth)
+    puts "saySomething: #{sth}"
+  end
+  
 end
 
 # Reopen a class & add a new method
 class ClassIsOpen01
-	def sayNothing
-		puts "sayNothing"
-	end
+  def sayNothing
+    puts "sayNothing"
+  end
 end
 
 cio = ClassIsOpen01.new

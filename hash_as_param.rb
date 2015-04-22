@@ -3,8 +3,8 @@
 
 #~ def hash_as_param(options = {}) # OK
 def hash_as_param(name, age, options = Hash.new) # OK
-	puts("name = #{name}, age = #{age}")
-	options.each {|key, value| puts "The #{key} is #{value}" }
+  puts("name = #{name}, age = #{age}")
+  options.each {|key, value| puts "The #{key} is #{value}" }
 end
 
 hash_as_param :malei, 28, :precision => 8, :scale => 2, :default => 0

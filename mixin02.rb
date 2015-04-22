@@ -3,35 +3,35 @@
 require_relative  'lib/test_module'
 
 
-class Phonograph	
-	include Debug
+class Phonograph  
+  include Debug
 
-	attr_accessor :str
-	
-	def initialize(name)
-		self.str = name
-	end
-	
-	# Overrides Object.to_s
-	def to_s
-		return str
-	end
+  attr_accessor :str
+  
+  def initialize(name)
+    self.str = name
+  end
+  
+  # Overrides Object.to_s
+  def to_s
+    return str
+  end
 end
 
 
 class EightTrack
-	include Debug
-	
-	attr_accessor :str
-	
-	def initialize(name)
-		self.str = name
-		do_something # defined in module Debug
-	end
+  include Debug
+  
+  attr_accessor :str
+  
+  def initialize(name)
+    self.str = name
+    do_something # defined in module Debug
+  end
 
-	def to_s
-		return str
-	end
+  def to_s
+    return str
+  end
 
 end
 
