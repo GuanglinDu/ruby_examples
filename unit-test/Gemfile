@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+# Try this if the https protocol cannot work
+#source 'http://rubygems.org'
 
 gem 'minitest'
 
