@@ -10,7 +10,7 @@ describe "TennisScorer", "basic scoring" do
     
    it "should start with a score of 0-0" do
      ts = TennisScorer.new
-    #ts.score.should == "0-0" # deprecated
+    #ts.score.should == "0-0" # deprecated style
     expect(ts.score) == "0-0" # new style
   end
   
