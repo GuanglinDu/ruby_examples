@@ -1,9 +1,11 @@
-# Module Debug resides in lib directory
-
+# Module Debug resides in lib directory. 
+# 2 steps are needed to mix it in the class.
+# Step 1: requires the path
 require_relative  'lib/test_module'
 
 
-class Phonograph  
+class Phonograph
+  # Step 2: mixes it into the class by including
   include Debug
 
   attr_accessor :str

@@ -1,7 +1,7 @@
 # See Chapter 8 More About Methods, Programming Ruby 1.9 & 2.0
 
 # Variable-Length Argument List using asterisk * 
-# *rest is an Array object
+# *rest is an Array object & optional
 puts "---  Variable-Length Argument List ---"
 def varargs(arg1, *rest)
 	#puts "rest.class = #{rest.class}"
@@ -11,7 +11,9 @@ end
 puts varargs("one") #"Got one and "
 puts varargs("one", "two") #"Got one and two"
 puts varargs "one", "two", "three" #"Got one and two, three"
-# Before 1.9, the Hash form:
+
+# The Array entry, a single one, can be a Hash object
+# Before 1.9, the Hash form
 puts varargs "one", :two => 2, :three => 3, :four => 4
 # Above 1.9
 puts varargs "one", two: 2, three: 3, four: :dugl
