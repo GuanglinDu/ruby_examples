@@ -23,6 +23,12 @@ puts b[0] = "second"
 puts b[1] = "array"
 puts b  # => ["second", "array"]
 
+# Uses an iteration to output
+puts "--- Uses an iteration to output the Array object ---"
+a2.each {|e|
+  puts e
+}
+
 # --- Hash (vs Dictionary in Python)
 puts "\n--- Hash (vs Dictionary in Python) ---"
 h = { 'dog' => 'canine', 'cat' => 'feline', 'donkey' => 'asinine' } # form 1
@@ -40,3 +46,9 @@ puts h2["one"]
 h3 = Hash.new # form 1
 h3[100] = "one hundred"
 puts h3[100]
+
+# Uses an iteration to output
+puts "--- Uses an iteration to output the Hash object---"
+h3.each {|k, v|
+  puts "#{k} => #{v}"
+}
