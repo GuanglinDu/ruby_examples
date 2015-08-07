@@ -4,13 +4,13 @@
 # *rest is an Array object & optional
 puts "---  Variable-Length Argument List ---"
 def varargs(arg1, *rest)
-	#puts "rest.class = #{rest.class}"
-	"Got #{arg1} and #{rest.join(', ')}"
+  # puts "rest.class = #{rest.class}"
+  "Got #{arg1} and #{rest.join(', ')}"
 end
 
-puts varargs("one") #"Got one and "
-puts varargs("one", "two") #"Got one and two"
-puts varargs "one", "two", "three" #"Got one and two, three"
+puts varargs("one") # "Got one and " (*rest is optional)
+puts varargs("one", "two") # "Got one and two"
+puts varargs "one", "two", "three" # "Got one and two, three"
 
 # The Array entry, a single one, can be a Hash object
 # Before 1.9, the Hash form
@@ -31,13 +31,13 @@ double("tom") {|val| puts "Then I got #{val}"}
 # associated block is converted to a Proc object, and that object is assigned to the parameter.
 # This allows you to store the block for use later.
 class TaxCalculator
-	def initialize(name, &block)
-		@name, @block = name, block
-	end
+  def initialize(name, &block)
+    @name, @block = name, block # parallel assignment
+  end
 	
-	def get_tax(amount)
-		"#@name on #{amount} = #{ @block.call(amount) }" # attention: #@name without braces
-	end
+  def get_tax(amount)
+    "#@name on #{amount} = #{ @block.call(amount) }" # attention: #@name without braces
+  end
 end
 
 tc = TaxCalculator.new("Sales tax") {|amt| amt * 0.075 }
