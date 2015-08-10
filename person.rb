@@ -6,11 +6,11 @@ class Person
   # Initializes with the default value World vs C++ constructor
   #def initialize(name = "World")
   def initialize(name = 'World') #same as above
-    @name = name
+    @name = name # an instance variable
   end
   
   def greet
-    "Hello, my name is #{@name}."
+    "Hello, my name is #{@name}." # references the instance variable
   end
   
   # Returns something
@@ -35,7 +35,7 @@ class Matz < Person
 end
 
 # Play with the base class
-puts "--- Base class ---\n"
+puts "--- The base class ---\n"
 aPerson = Person.new #default initialization
 puts aPerson.greet
 #brian = Person.new('Brian') #OK
@@ -45,6 +45,6 @@ puts aPerson.greet
 brian = Person.new(:Brian) #OK, symbol
 puts brian.greet
 
-puts "--- subclass ---\n"
+puts "--- The subclass ---\n"
 puts Matz.new.greet
 puts Matz.new.greet3("dugl")
