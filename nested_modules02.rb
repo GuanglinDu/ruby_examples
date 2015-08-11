@@ -1,4 +1,4 @@
-# module A::B::C # illegal if module A, B and C doesn't exist yet
+# module A::B::C # illegal if module A, B and C do not exist yet
 module A
 module B
 module C	

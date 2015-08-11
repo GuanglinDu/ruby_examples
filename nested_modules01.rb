@@ -71,7 +71,6 @@ son_a.say_hi
 
 
 # Mixes them in a class
-require_relative "nested_module"
 puts "\n--- Mixes in all the layers ---"
 class TestMixin
   include A
