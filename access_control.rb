@@ -2,29 +2,42 @@
 # @author Guanglin Du
 # 2013/04/20 18:58:47
 
+# Page 40, 3.3 Access Control, Programming Ruby 1.9 & 2.0 by Dave Thomas with Chad Fowler and Andy Hunt
+# Ruby gives you three levels of protection:
+# * Public methods can be called by anyone—no access control is enforced. Methods are
+#   public by default (except for initialize, which is always private).
+# * Protected methods can be invoked only by objects of the defining class and its subclasses.
+#   Access is kept within the family. (internally in the implementation)
+# * Private methods cannot be called with an explicit receiver—the receiver is always the
+# current object, also known as self. This means that private methods can be called only
+# in the context of the current object; you can’t invoke another object’s private methods.
+
+# See also method_visibility.rb
+
 class AccessControlDemo
-  def method1    # default is 'public'
+  def method1 # default is 'public'
     puts "Method1 is public by default."
   end
   
   protected # subsequent methods will be 'protected'
 
-  def method2    # will be 'protected'
+  def method2 # will be 'protected'
     puts "Method2 is protected."
   end
 
   private # subsequent methods will be 'private'
 
-  def method3    # will be 'private'
+  def method3 # will be 'private'
     puts "Method3 is private."
   end
 
   public # subsequent methods will be 'public'
 
-  def method4    # and this will be 'public'
+  def method4 # and this will be 'public'
     puts "Method4 is specified as public."
   end
 end
+
 
 # Alternatively, you can set access levels of named methods
 # by listing them as arguments to the access control functions. 
@@ -46,13 +59,25 @@ class MyClass
   end
 
   # ... and so on
-  public    :method1, :method4
+  public :method1, :method4
   
   protected :method2
   
   private   :method3
 end
 
+
+# A subclass can calls all the methods in it's superclass, internally
+class MySubclass < AccessControlDemo
+  def submethod1
+    method1
+    method2 # protected, OK
+    method3 # private, OK
+  end
+end
+
+
+# Calls the methods in objects
 acd = AccessControlDemo.new
 acd.method1
 #acd.method2 #can only be called from within the definition or subclass definition
@@ -61,3 +86,13 @@ acd.method4
 
 mc = MyClass.new
 mc.method1
+
+puts "--- In subclasses --"
+msc = MySubclass.new
+msc.method1
+# msc.method2 # NoMethodError, protected
+# msc.method3 # NoMethodError, private
+msc.method4
+
+puts "--- Calls superclass' methods in a method of the subclass --"
+msc.submethod1
