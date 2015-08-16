@@ -90,8 +90,15 @@ mc.method1
 puts "--- In subclasses --"
 msc = MySubclass.new
 msc.method1
-# msc.method2 # NoMethodError, protected
-# msc.method3 # NoMethodError, private
+
+# NoMethodError, protected
+begin
+  #msc.method2  
+  #msc.method3 # NoMethodError, private
+rescue Exception
+  raise
+end
+
 msc.method4
 
 puts "--- Calls superclass' methods in a method of the subclass --"
