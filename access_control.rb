@@ -68,6 +68,10 @@ end
 
 
 # A subclass can calls all the methods in it's superclass, internally
+# See http://weblog.jamisbuck.org/2007/2/23/method-visibility-in-ruby
+# Note that, unlike languages such as Java, inheritance plays absolutely no part in determining method visibility in Ruby.
+# Subclasses can access both protected and private methods of the superclass without trouble,
+# so long as they abide by the rules laid out above.
 class MySubclass < AccessControlDemo
   def submethod1
     method1
