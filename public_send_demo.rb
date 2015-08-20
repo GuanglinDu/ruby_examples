@@ -5,17 +5,18 @@
 # Unlike send, #public_send calls public methods only. When the method is identified by a string, the string is converted to a symbol.
 
 class PublicSendDemo
-  attr_accessor :name
+  attr_accessor :name # getter & setter
   
   def initialize(name = "World")
     @name = name
   end
   
   def say_hello(s = "Globe")
-    #self.name = s
-    #name = s
-    @name = s
-    puts "Hello, #{name}"
+    #self.name = s # OK. Calls the setter
+    name = s # OK. Calls the setter
+    #@name = s # OK. Assigns the instance variable directly
+    puts "Hello, #{name}" # call the setter
+    puts "Hello, #{@name}" # use the instance variable directly
   end
 end
 

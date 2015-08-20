@@ -1,4 +1,4 @@
-# See Chapter 8 More About Methods, Programming Ruby 1.9 & 2.0
+# See Chapter 8 More About Methods, Programming Ruby 1.9 & 2.0 by Dave Thomas with Chad Fowler and Andy Hunt.
 
 # Variable-Length Argument List using asterisk * 
 # *rest is an Array object & optional
@@ -28,8 +28,8 @@ double(3) {|val| puts "I got #{val}"}
 double("tom") {|val| puts "Then I got #{val}"}
 
 # However, if the last parameter in a method definition is prefixed with an ampersand, any
-# associated block is converted to a Proc object, and that object is assigned to the parameter.
-# This allows you to store the block for use later.
+# associated block is converted to a Proc object (see proc_demo.rb),
+# and that object is assigned to the parameter. This allows you to store the block for use later.
 class TaxCalculator
   def initialize(name, &block)
     @name, @block = name, block # parallel assignment

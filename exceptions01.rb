@@ -1,5 +1,5 @@
 # Created on Aug. 16, 2015 Sun.
-# Page 142, 10.2Handling Exceptions, Programming Ruby 1.9 & 2.0 by Dave Thomas with Chad Fowler and Andy Hunt
+# Page 142, 10.2 Handling Exceptions, Programming Ruby 1.9 & 2.0 by Dave Thomas with Chad Fowler and Andy Hunt
 
 require 'open-uri'
 

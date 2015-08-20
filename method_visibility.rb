@@ -1,6 +1,13 @@
 # Created on Aug. 14, 2015 Fri.
 # Method visibility in Ruby
+#
 # http://weblog.jamisbuck.org/2007/2/23/method-visibility-in-ruby
+# * The protected keyword puts a straitjacket around the method.
+# Any method declared protected may only be called if the receiver is self, explicitly or implicitly.
+# (Update: protected methods may actually be called any time the receiver is of the same class as ‘self’...
+# and an explicit self as receiver is just a specific case of that.)
+# * Lastly, the private keyword is the tightest setting of all. 
+# A private method cannot be called with an explicit receiver at all, even if that receiver is “self”.
 
 # See also access_control.rb
 
@@ -30,6 +37,7 @@ def safe_send(receiver, method, message)
     puts "#{message}: succeeded"
 end
 
+# Uses method public, protected and private to change the access control of method a
 visibility = ARGV.shift || "public" # Array.shift
 Foo.send(visibility, :a)
 

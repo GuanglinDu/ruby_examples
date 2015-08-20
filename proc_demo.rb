@@ -5,7 +5,7 @@
 
 # Returns a new Proc object
 def gen_times(factor)
-  return Proc.new {|n| n*factor }
+  return Proc.new {|n| n*factor } # n is the param
 end
 
 times3 = gen_times(3)
@@ -15,6 +15,7 @@ times5 = gen_times(5)
 puts times3.call(12) #=> 36
 puts times5.call(5) #=> 25
 puts times3.call(times5.call(4)) #=> 60
+
 
 # Creates a new Proc object, bound to the current context.
 # Proc::new may be called without a block only within a method with an attached block,
