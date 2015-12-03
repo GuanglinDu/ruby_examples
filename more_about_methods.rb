@@ -16,7 +16,7 @@ puts varargs "one", "two", "three" # "Got one and two, three"
 # Before 1.9, the Hash form
 puts varargs "one", :two => 2, :three => 3, :four => 4
 # Above 1.9
-puts varargs "one", two: 2, three: 3, four: :dugl
+puts varargs "one", two: 2, three: 3, four: :hello
 
 
 # Methods and Blocks
