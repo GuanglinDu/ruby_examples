@@ -5,9 +5,9 @@
 def evaluate(*arr)
   arr.each{|a|
     if a
-      puts "a is true: #{a}"
+      puts "#{a} is true in Ruby"
     elsif
-      puts "a is false: #{a}"
+      puts "#{a} is false in Ruby"
     end
   }
 end

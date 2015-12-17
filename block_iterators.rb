@@ -14,7 +14,7 @@ def call_block
   puts "End of method"
 end
 
-#Writing iterators
+#Writing iterators (a factorial)
 def f(count, &block)
   value = 1
   1.upto(count) do |i|
@@ -51,17 +51,24 @@ end
 fib_up_to(1000) { |f| print f, " " }
 
 #3nd block example from Programming Ruby, 1st edition.
-puts "\n--- Block demo 3 ---\n"
-a = %w( ant bee cat dog elk )
-a.each { |animal| puts animal }
+puts "\n\n--- Block demo 3 ---\n"
+a = %w( ant bee cat dog elk ) # create an array
+a.each { |animal| puts animal } # iterate over the contents
 
-#4th block demo
+#4th block demo (page 27 of Programming Ruby, 3rd edition)
 puts "\n--- Block demo 4 ---\n"
 5.times {  print "*" }
 3.upto(6) {|i|  print i }
 ('a'..'e').each {|char| print char }
 puts "\n"
 
-puts "\n--- I/O demo 4 ---\n"
+puts "\n--- I/O demo 4: Provide arguments to the block ---\n"
 printf "Number: %5.2f, String: %s", 1.23, "hello"
 print "\n"
+
+def who_says_what
+  yield("Dave", "hello")
+  yield("Andy", "goodby")
+end
+
+who_says_what {|person, phrase| puts "#{person} says #{phrase}"}

@@ -8,10 +8,12 @@ def gen_times(factor)
   return Proc.new {|n| n*factor } # n is the param
 end
 
+# Creates new Proc objects & binds them to the local variables
 times3 = gen_times(3)
 times5 = gen_times(5)
 
-# Invokes the block with method call
+# Method call invokes the block, setting the block’s parameters to the values
+#in params using something close to method calling semantics.
 puts times3.call(12) #=> 36
 puts times5.call(5) #=> 25
 puts times3.call(times5.call(4)) #=> 60
