@@ -27,4 +27,3 @@ if File.exist?(csv_file)
     end
   end  
 end  
-

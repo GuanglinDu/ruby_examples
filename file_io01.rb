@@ -18,3 +18,9 @@ File.open('test2.txt', 'w') do |f2|
   # use "\n" for two lines of text  
   f2.puts "Created by Satish\nThank God!"  
 end 
+
+
+# __FILE__
+puts "\n--- Constants __FILE__: #{__FILE__}"
+f1 = File.expand_path('../unit-test/readme.txt', __FILE__)
+puts f1

@@ -28,9 +28,9 @@ class TestHelloWorld < MiniTest::Unit::TestCase
   end
   
   # Other often used assertions
-  # ASSERTION	EXPECTATION
-  # assert_equal	must_equal
+  # ASSERTION                 EXPECTATION
+  # assert_equal             must_equal
   # assert_instance_of	must_be_instance_of
-  # assert_nil	must_be_nil
-  # assert_raises	must_raise
+  # assert_nil                  must_be_nil
+  # assert_raises            must_raise
 end

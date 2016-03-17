@@ -1,4 +1,5 @@
-# See Chapter 8 More About Methods, Programming Ruby 1.9 & 2.0 by Dave Thomas with Chad Fowler and Andy Hunt.
+# See Chapter 8 More About Methods, Programming Ruby 1.9 & 2.0
+# by Dave Thomas with Chad Fowler and Andy Hunt.
 
 # Variable-Length Argument List using asterisk * 
 # *rest is an Array object & optional

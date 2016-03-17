@@ -1,5 +1,5 @@
 # Mar. 22, 2014 Sat.
-# How do I test my code with Minitest? 
+# How do I test my code with Minitest?
 # http://rubylearning.com/blog/2011/07/28/how-do-i-test-my-code-with-minitest/
 
 require 'minitest/autorun'

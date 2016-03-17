@@ -3,22 +3,24 @@
 
 require_relative 'class_is_open01'
 
-# Opens ClassIsOpen01 & appends a new method
+# Opens ClassIsOpen01 & appends a new method,
+# which is called the Monkey Patching.
 class ClassIsOpen01
-  
   def say_something(sth)
     puts "say something: #{sth}"
   end
-  
 end
 
 # Reopen it & adds one more method
 class ClassIsOpen01
-
   def say_nothing
     puts "say nothing"
   end
   
+  # Redefines method setup
+  def setup
+    puts "Method setup redefined!"
+  end
 end
 
 
@@ -32,3 +34,5 @@ cio.do_something :duckduckgodotcom
 puts "\n*** Methods appended"
 cio.say_something :hi
 cio.say_nothing
+
+cio.setup

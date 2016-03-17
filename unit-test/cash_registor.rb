@@ -13,7 +13,7 @@ class CashRegister
    
    def scan(item)
      @items << item
-     #@items.each {|i| puts i}
+     #@items.each { |i| puts i }
    end
    
 	def i_love_u
