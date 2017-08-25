@@ -2,7 +2,7 @@
 # unittesting/bdd/1/ts_spec.rb
 # ts = test suite
 
-# How to run tests of rspec: rspec tennis_scorer_spec.rb
+# How to run rspect tests: rspec tennis_scorer_spec.rb
 
 require_relative "tennis_scorer"
 

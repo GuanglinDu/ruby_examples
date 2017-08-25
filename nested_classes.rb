@@ -38,11 +38,14 @@ end
 class MyScope < NestedClassDemo::Scope
 end
 
+# Tests the superclass
 scope = NestedClassDemo::Scope.new
 scope.do_something
 
+# Tests the subclass
 scope2 = SubnestedClass::Scope.new
 scope2.do_something
 
+# Another subclass
 ms = MyScope.new("MyScope")
 ms.do_something

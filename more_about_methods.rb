@@ -9,8 +9,8 @@ def varargs(arg1, *rest)
   "Got #{arg1} and #{rest.join(', ')}"
 end
 
-puts varargs("one") # "Got one and " (*rest is optional)
-puts varargs("one", "two") # "Got one and two"
+puts varargs("one")                        # "Got one and " (*rest is optional)
+puts varargs("one", "two")             # "Got one and two"
 puts varargs "one", "two", "three" # "Got one and two, three"
 
 # The Array entry, a single one, can be a Hash object

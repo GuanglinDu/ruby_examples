@@ -25,7 +25,7 @@ puts "---\n Passing parameters to the block ---"
 def call_block2 
   yield('hello', 99)  
 end  
-call_block2 {|str, num| puts str + ' ' + num.to_s}  
+call_block2 { |str, num| puts str + ', ' + num.to_s } 
 
 
 # A code block's return value (like that of a method) is the value of the last expression

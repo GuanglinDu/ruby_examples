@@ -1,8 +1,7 @@
 # Sep. 9, 2009
 # Modules provide namespaces
-# Affiliation:            Ruby Course
-# — an immersive programming course 
-# Brian Schröder
+# Affiliation: Ruby Course — an immersive programming course 
+# by Brian Schröder
 
 require_relative 'module02'
 
@@ -11,13 +10,14 @@ module AntGame
   class Ant    
     attr_accessor :x, :y, :direction, :next_action
           
-        def initialize(x, y)
+    def initialize(x, y)
       @x = x; @y = y
       @direction = :north
       @next_action = Actions::WAIT # use the module directly here!
-        end    
+    end    
   end
  
+  # This module is directly mixed in class Ant (inclue)
   module Actions
     WAIT = :wait
     TURN_LEFT = :turn_left
@@ -58,7 +58,7 @@ include AntGame
 ag2 = Ant.new(1, 2)
 puts "x, y = #{ag2.x}, #{ag2.y}"
 
-# The module is open
+# The module is open, so this new method was appended.
 ag2.goodbye
 
 # The module is open

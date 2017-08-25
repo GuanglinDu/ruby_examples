@@ -14,7 +14,7 @@ module Amodule
   include Bmodule
 end
 
-# Mixes the module in
+# Mixes the module in - mixin
 class MyClass
   include Amodule
   include AntGame # module02.rb

@@ -3,20 +3,22 @@
 
 # Defines a method to evaluate the truth value
 def evaluate(*arr)
-  arr.each{|a|
+  arr.each do |a|
     if a
       puts "#{a} is true in Ruby"
     elsif
       puts "#{a} is false in Ruby"
     end
-  }
+  end
 end
 
 # True values
 # The global value true is the only instance of class TrueClass and
 # represents a logically true value in boolean expressions.
-evaluate(0, 1, [], {}, true) 
+puts "--- true values ---"
+evaluate 0, 1, [], {}, true 
 
 # False values
 # FalseClass
-evaluate(nil, false)
+puts "\n--- false values ---"
+evaluate nil, false

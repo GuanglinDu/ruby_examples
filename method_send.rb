@@ -37,13 +37,16 @@ c.show_info
 # Or using .send method. Note the = mark.
 c.send("make=", "Honda")
 c.send("model=", "CRV")
-c.send("year=","2014")
+c.send("year=","2015")
 c.show_info
+
+value = c.send "year" # via the getter/setter
+puts "   *** Access the variable: value = #{value}" 
 
 # But it can all be replaced with the following:
 # Assuming your Rails app needs to assign attributes to your car class from user input, you can do
 c2 = Car.new()
-params = {make: 'Honda', model: 'SUV', year: '2015'}
+params = {make: 'Honda', model: 'SUV', year: '2016'}
 params.each do |key, value|
   c2.send("#{key}=", value)
 end

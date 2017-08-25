@@ -1,5 +1,5 @@
 # May. 31, 2013 Fri.
-# Appends method sum to module01.rb
+# Appends method sum to module01.rb as a module is open.
 
 module AntGame
   

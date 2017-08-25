@@ -46,4 +46,4 @@ ph = Phonograph.new("West End Blues")
 et = EightTrack.new("Surrealistic Pillow")
 # Method who_am_i? is mixed in from module Debug
 puts ph.who_am_i? #"Phonograph (#935520): West End Blues"
-puts et.who_am_i? #"EightTrack (#935500): Surrealistic Pillow"
+puts et.who_am_i?  #"EightTrack (#935500): Surrealistic Pillow"

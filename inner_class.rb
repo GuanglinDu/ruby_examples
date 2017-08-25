@@ -15,10 +15,13 @@ end
 
 oc = Outerclass.new
 oc.foobar
-puts "The instance methods: #{Outerclass.instance_methods(false)}" # => [:foobar]
+puts "The instance methods: " \
+        "#{Outerclass.instance_methods(false)}" # => [:foobar]
 
 
 # Use the scope operator to access the inner class as is the case in a module
 ic = Outerclass::Innerclass.new
 ic.barfoo
-puts format("The instance methods: %s", Outerclass::Innerclass.instance_methods(false)) # => [:barfoo]
+puts format("The instance methods: %s",
+                    Outerclass::Innerclass.instance_methods(false))
+# => [:barfoo]

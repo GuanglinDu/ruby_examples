@@ -1,13 +1,16 @@
 # 06/16/2009 14:37:05
-# Implements a SongList Container ''
-# See http://stackoverflow.com/questions/12924080/difference-between-instance-variable-and-attr-accessor
-# An instance variable is not visible outside the object it is in; but when you create an attr_accessor,
-# it creates an instance variable and also makes it visible (and editable) outside the object.
-# Because attr_accessor defines methods, you can call them from outside the class.
+# Implements a SongList Container
+# See http://goo.gl/ELiIeB
+# An instance variable is not visible outside the object it is in; but when you
+# create an attr_accessor, it creates an instance variable and also makes it
+# visible (and editable) outside the object. Because attr_accessor defines
+# methods, you can call them from outside the class.
 # A @variable is only accessible from inside the class.
 
 class Song
-  # 3 accessor methods, getters as in Java, to get 3 instance attributes externally, respectively
+  # Readable attributes.
+  # Three getting methods, as getters as in Java, to get 3 instance attributes
+  # externally, respectively。
   #def name
   #  @name
   #end
@@ -23,15 +26,17 @@ class Song
   # Writable attributes (setters as in Java)
   # Defining a method name ending in an equals sign makes that name eligible
   # to appear on the left-hand side of an assignment.
-  #def duration(new_duration) #wrong!
+  #def duration(new_duration) # wrong!
   #def duration=(new_duration)
   #  @duration = new_duration
   #end
 
-  # The shortcut: attr_reader creates the above 3 accessor methods(getters)
+  # The shortcut: attr_reader creates the above 3 reading methods (getters)
   #attr_reader :name, :artist, :duration
-  # The same applies to writable attributes
+  
+  # The same applies to writable attributes (setters)
   #attr_writer :name, :artist, :duration
+  
   # Both readers and writers (getters & setters)
   attr_accessor :name, :artist, :duration
   

@@ -1,6 +1,8 @@
+# See http://goo.gl/XOBw85
 class Foo
   def foo
-    "#{self.class}#foo"
+    puts "In the parent class:"
+    "#{self.class}#foo"    
   end
   
   def say_hi
@@ -8,8 +10,10 @@ class Foo
   end
 end
 
+# Overrides and call the parent methods at the same time
 class Bar < Foo
   def foo
+    puts "In the childe class:"
     "Super says: #{super}"
   end
   
