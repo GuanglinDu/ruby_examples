@@ -1,5 +1,5 @@
 # Created on Dec. 15, 2015 Tue.
-# See http://rubylearning.com/satishtalim/ruby_blocks.html
+# http://rubylearning.com/satishtalim/ruby_blocks.html
 
 =begin  
   Ruby Code blocks are chunks of code between braces or  
@@ -16,7 +16,7 @@ end
 # Code blocks may appear only in the source adjacent to a method call  
 call_block {puts 'In the block'}  
 # No block given will lead to this error
-#call_block # no block given (LocalJumpError)
+# call_block # no block given (LocalJumpError)
 
 
 # You can provide parameters to the call to yield:  

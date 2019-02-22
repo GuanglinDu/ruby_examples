@@ -10,7 +10,7 @@
 class Song
   # Readable attributes.
   # Three getting methods, as getters as in Java, to get 3 instance attributes
-  # externally, respectively。
+  # externally, respectively.
   #def name
   #  @name
   #end

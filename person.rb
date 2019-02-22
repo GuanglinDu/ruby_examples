@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 #Jun. 12, 2009
 
-# Method initialize is  NOT a must
+# Method initialize is NOT a must
 class Person
   # Initializes with the default value World vs C++ constructor
   #def initialize(name = "World")

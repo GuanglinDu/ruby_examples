@@ -6,6 +6,7 @@
 puts "---  Variable-Length Argument List ---"
 def varargs(arg1, *rest)
   # puts "rest.class = #{rest.class}"
+  #puts rest.class
   "Got #{arg1} and #{rest.join(', ')}"
 end
 
@@ -28,16 +29,19 @@ end
 double(3) {|val| puts "I got #{val}"}
 double("tom") {|val| puts "Then I got #{val}"}
 
-# However, if the last parameter in a method definition is prefixed with an ampersand, any
-# associated block is converted to a Proc object (see proc_demo.rb),
-# and that object is assigned to the parameter. This allows you to store the block for use later.
-class TaxCalculator
+# However, if the last parameter in a method definition is prefixed with an
+# ampersand, any associated block is converted to a Proc object
+# (see proc_demo.rb), and that object is assigned to the parameter. This allows
+# you to store the block for use later.
+class TaxCalculator      
   def initialize(name, &block)
-    @name, @block = name, block # parallel assignment
+    @name, @block = name, block # parallel assignment  
   end
 	
   def get_tax(amount)
-    "#@name on #{amount} = #{ @block.call(amount) }" # attention: #@name without braces
+    "#{@name} on #{amount} = #{ @block.call(amount) }"
+    #  #@name without braces also works
+    #"#@name on #{amount} = #{ @block.call(amount) }"
   end
 end
 

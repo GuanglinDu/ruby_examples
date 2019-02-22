@@ -10,7 +10,7 @@ end
 
 
 class Phonograph
-  # Mixing module Debug into th eclass by including
+  # Mixing module Debug into the class by including
   # since they're in the same source file
   include Debug
 
