@@ -33,3 +33,6 @@ psd.public_send(:say_hello, 'Ruby')
 
 # Method send calls either a public or private method
 psd.send(:hi_private)
+
+# Send can call an instance variable as the getter is implicit.
+puts "name = #{psd.send(:name)}"
