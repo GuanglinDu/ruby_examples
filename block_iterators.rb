@@ -58,7 +58,7 @@ a.each { |animal| puts animal } # iterate over the contents
 #4th block demo (page 27 of Programming Ruby, 3rd edition)
 puts "\n--- Block demo 4 ---\n"
 5.times {  print "*" }
-3.upto(6) {|i|  print i }
+3.upto(6) { |i|  print i }
 ('a'..'e').each {|char| print char }
 puts "\n"
 
