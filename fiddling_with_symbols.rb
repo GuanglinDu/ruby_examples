@@ -30,6 +30,8 @@ fws2.sayHi
 fws3.sayHi
 puts "-----------"
 
-fws3.add_column :dgl, :decimal, :precision => 8, :scale => 2, :default => 0
+fws3.add_column :dgl, :decimal, precision: 8, scale: 2, default: 0
 puts "-----------"
-fws3.add_column :qxq, :hexadecimal, {:precision => 18, :scale => 12, :default => 10, :label => "dyq"} # same as above
+# same as above
+fws3.add_column :qxq, :hexadecimal, 
+                              {precision: 18, scale: 12, default: 10, label: "dyq"}
