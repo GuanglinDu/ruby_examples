@@ -99,7 +99,7 @@ puts "--- Closures"
 # Example of Proc objects preserving local context
 def counter
   n = 0
-  return Proc.new { n+= 1 }
+  return Proc.new { n += 1 }
 end
 
 a = counter
