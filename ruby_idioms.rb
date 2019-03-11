@@ -17,16 +17,17 @@ end
 [Foo.new, Foo.new].map(&:method_name)
 
 # & -- Proc
+puts "\n--- What Ruby does when it sees &"
 class MyClass
   def to_proc
-    puts "Trying to convert to a proc ..."
+    puts "Trying to convert to a Proc ..."
     Proc.new {}
   end
 end
 
 [].map(&MyClass.new)
 
-
+puts "\n--- Our own map method"
 def my_map(enumerable, &block)
   result = []
   enumerable.each { |element| result << block.call(element) }
@@ -37,6 +38,7 @@ puts my_map(["foo", "bar"], &:upcase)
 # => ["FOO", "BAR"]
 
 
+puts "--- Our own Symbol functionality"
 class MySymbol
   def initialize(method_name)
     @method_name = method_name
