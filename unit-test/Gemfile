@@ -1,9 +1,7 @@
-#source 'https://rubygems.org'
-# Try this if the https protocol cannot work
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '4.2.2'
-
-gem 'minitest'
-
-gem 'rspec'
+gem 'rails',             '4.2.11.1'
+gem 'sprockets',    '3.7.2'
+gem 'nokogiri',      '1.9.1'
+gem 'minitest',      '5.5.0'    
+gem 'rspec-rails',  '3.4.2'
