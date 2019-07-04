@@ -54,14 +54,14 @@ my_method3 do
   2
 end
 
-# .map(&:something)? Cannot work?
+# .map(&:something)
 puts "\n---.map(&:something)---"
 def list_array(arr)
   arr.each{ |e| puts e }
 end
 a1 = ['abc', 'def']
-#a2 = a1.map(&capitalize)
-#list_array(a2)
+a2 = a1.map(&:capitalize)
+list_array(a2)
 
 a3 = a1.map { |e| e.capitalize }
 list_array(a3)

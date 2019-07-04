@@ -29,3 +29,13 @@ end
 
 proc = proc_from { "hello, Proc." }
 puts proc.call #=> "hello, Proc"
+
+
+# Added on Thu, Jul 4, 2019
+# https://ruby-doc.org/core-2.6.2/Proc.html#method-i-yield
+puts "\n--- Added on Thu, Jul 4, 2019"
+a_proc = Proc.new {|scalar, *values| values.map {|value| value*scalar } }
+puts a_proc.call(9, 1, 2, 3)   #=> [9, 18, 27]
+puts a_proc[9, 1, 2, 3]          #=> [9, 18, 27]
+puts a_proc.(9, 1, 2, 3)         #=> [9, 18, 27]
+puts a_proc.yield(9, 1, 2, 3) #=> [9, 18, 27]
