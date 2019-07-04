@@ -2,14 +2,17 @@
 # See http://mixandgo.com/blog/mastering-ruby-blocks-in-less-than-5-minutes
 
 # Outputs the elements of an Array
+puts "--- do...end"
 [1, 2, 3].each do |n|
   puts "Number #{n}"
 end
 
 # An inline block
-[1, 2, 3].each {|n| puts "Number #{n}"}
+puts "--- onliner"
+[1, 2, 3].each { |n| puts "Number #{n}" }
 
-# Keyword yield
+# How yield works: Keyword yield
+puts "\n--- How yield works: Keyword yield"
 def my_method
   puts "reached the top"
   yield
@@ -29,14 +32,25 @@ end
 
 my_method { puts "Hello!" }
 
+# Yield takes parameters too
+puts "\n---Yield takes parameters too---"
+def my_method2
+    yield("John", 2)
+end
+
+my_method2 do |name, age|
+  puts "#{name} is #{age} years old"
+end
+
+
 # Return value
 puts "\n---Return value---"
-def my_method2
+def my_method3
     value = yield
     puts "value is: #{value}"
 end
 
-my_method2 do
+my_method3 do
   2
 end
 
