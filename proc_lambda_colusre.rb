@@ -2,32 +2,35 @@
 # http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/
  
 # Block Examples
-puts "--- Bock examples"
-[1, 2, 3].each { |x| puts x*2 } # block is in between the curly braces
+puts "--- I. Bock examples"
+[1, 2, 3].each { |x| print "#{x*2}, " } # block is in between the curly braces
 
+puts
 [1, 2, 3].each do |x|
-  puts x*2                              # block is everything between the do and end
+  print "#{x*2}, "                                # block is everything between the do and end
 end
 
 # Proc Examples
-puts "--- Proc examples"
-p = Proc.new { |x| puts x*2 }
-[1, 2, 3].each(&p)                   # The '&' tells ruby to turn the proc into a block 
+puts "\n\n--- II. Proc examples"
+p = Proc.new { |x| print "#{x*2}, " }
+[1, 2, 3].each(&p) # The '&' tells ruby to turn the proc into a block 
 
 proc = Proc.new { puts "Hello Proc" }
-proc.call                               # The body of the Proc object gets executed when called
+proc.call                # The body of the Proc object gets executed when called
 
-puts "--- Lambda examples"
+puts "\n--- III. Lambda examples"
 # Lambda Examples            
-lam = lambda { |x| puts x*2 }
+#lam = lambda { |x| print "#{x*2}, " }
+lam = ->(x) { print "#{x*2}, " } # dash rocket, same as above
 [1, 2, 3].each(&lam)
 
-lam = lambda { puts "Hello lambda" }
+#lam = lambda { puts "Hello lambda" }
+lam = -> { puts "Hello lambda" } # dash rocket
 lam.call
 
 
 # Differences between Blocks and Procs
-puts "--- Differences between Blocks and Procs"
+puts "\n--- IV. Differences between Blocks and Procs"
 
 # 1. Procs are objects, blocks are not
 p = Proc.new { puts "Hello world" }
@@ -50,7 +53,7 @@ multiple_procs(a,b)
 
 
 # Differences between Procs and Lambdas
-puts "--- Differences between Procs and Lambdas"
+puts "\n--- V. Differences between Procs and Lambdas"
 proc = Proc.new { puts "Hello Proc" }
 lam = lambda { puts "Hello lambda" }
 
@@ -63,16 +66,25 @@ puts proc   # returns '#<Proc:0x007f96b1032d30@(irb):75>'
 puts lam    # returns '<Proc:0x007f96b1b41938@(irb):76 (lambda)>'
 
 # 1. Lambdas check the number of arguments, while procs do not
-lam = lambda { |x| puts x } # creates a lambda that takes 1 argument
-lam.call(2)                           # prints out 2
-#lam.call                              # ArgumentError: wrong number of arguments (0 for 1)
-#lam.call(1,2,3)                   # ArgumentError: wrong number of arguments (3 for 1)
+# https://stackoverflow.com/questions/8476627/what-do-you-call-the-operator-in-ruby
+# => == Hash Rocket
+# Separates keys from values in a hash map literal.
+# -> == Dash Rocket
+# Used to define a lambda literal in Ruby 1.9.X (without args) and
+# Ruby 2.X (with args). The examples you give (->(x) { x * 2 } &
+# lambda { |x| x * 2 }) are in fact equivalent.
+
+#lam = lambda { |x| puts x } # creates a lambda that takes 1 argument
+lam = ->(x) { puts x } # same as above, 
+lam.call(2)                    # prints out 2
+#lam.call                     # ArgumentError: wrong number of arguments (0 for 1)
+#lam.call(1, 2, 3)        # ArgumentError: wrong number of arguments (3 for 1)
 
 # In contrast, procs don’t care if they are passed the wrong number of arguments.
 proc = Proc.new { |x| puts x } # creates a proc that takes 1 argument
 proc.call(2)                              # prints out 2
 proc.call                                   # returns nil
-proc.call(1,2,3)                        # prints out 1 and forgets about the extra arguments
+proc.call(1, 2, 3)                        # prints out 1 and forgets about the extra arguments
 
 # 2. Lambdas and procs treat the ‘return’ keyword differently
 # ‘return’ inside of a lambda triggers the code right outside of the lambda code
@@ -83,6 +95,7 @@ def lambda_test
 end
 
 lambda_test # calling lambda_test prints 'Hello World'
+
 # ‘return’ inside of a proc triggers the code outside of the method where
 # the proc is being executed
 def proc_test
@@ -95,7 +108,7 @@ proc_test # calling proc_test prints nothing
 
 
 # Closures
-puts "--- Closures"
+puts "\n--- VI. Closures"
 # Example of Proc objects preserving local context
 def counter
   n = 0
@@ -103,13 +116,13 @@ def counter
 end
 
 a = counter
-puts a.call            # returns 1
-puts a.call            # returns 2
+puts a.call # returns 1
+puts a.call # returns 2
 
 b = counter
-puts b.call            # returns 1
+puts b.call # returns 1
 
-puts a.call            # returns 3
+puts a.call # returns 3
 
 # Summary Differences
 # 1. Procs are objects, blocks are not
