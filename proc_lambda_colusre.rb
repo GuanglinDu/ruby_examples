@@ -21,7 +21,7 @@ proc.call                # The body of the Proc object gets executed when called
 puts "\n--- III. Lambda examples"
 # Lambda Examples            
 #lam = lambda { |x| print "#{x*2}, " }
-lam = ->(x) { print "#{x*2}, " } # dash rocket, same as above
+lam = ->(x) { print "#{x*2}, " } # dash rocket or stabby lambda, same as above
 [1, 2, 3].each(&lam)
 
 #lam = lambda { puts "Hello lambda" }
