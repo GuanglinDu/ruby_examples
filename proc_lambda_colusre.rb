@@ -46,7 +46,7 @@ end
 a = Proc.new { puts "First proc" }
 b = Proc.new { puts "Second proc" }
 
-multiple_procs(a,b)
+multiple_procs(a, b)
 
 
 # Differences between Procs and Lambdas
@@ -66,13 +66,13 @@ puts lam    # returns '<Proc:0x007f96b1b41938@(irb):76 (lambda)>'
 lam = lambda { |x| puts x } # creates a lambda that takes 1 argument
 lam.call(2)                           # prints out 2
 #lam.call                              # ArgumentError: wrong number of arguments (0 for 1)
-#lam.call(1,2,3)                   # ArgumentError: wrong number of arguments (3 for 1)
+#lam.call(1, 2, 3)                   # ArgumentError: wrong number of arguments (3 for 1)
 
 # In contrast, procs don’t care if they are passed the wrong number of arguments.
 proc = Proc.new { |x| puts x } # creates a proc that takes 1 argument
 proc.call(2)                              # prints out 2
 proc.call                                   # returns nil
-proc.call(1,2,3)                        # prints out 1 and forgets about the extra arguments
+proc.call(1, 2, 3)                        # prints out 1 and forgets about the extra arguments
 
 # 2. Lambdas and procs treat the ‘return’ keyword differently
 # ‘return’ inside of a lambda triggers the code right outside of the lambda code
