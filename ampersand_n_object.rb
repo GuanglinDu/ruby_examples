@@ -8,7 +8,7 @@
 # something { |i| i.foo }
 # something(&:foo)
 
-up# Also, to_proc on Symbol is implemented in Ruby 1.8.7 and 1.9, so it is in fact
+# Also, to_proc on Symbol is implemented in Ruby 1.8.7 and 1.9, so it is in fact
 # a "ruby thing".
 # So, to sum up: & calls to_proc on the object and passes it as a block to the
 # method, and Ruby implements to_proc on Symbol.
