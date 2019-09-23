@@ -57,7 +57,7 @@ class Song
   end
 
   def access_by_setter
-      self.name = "access_by_the_setter"
+    self.name = "Name reset with the setter method"
     puts "access_by_the_setter: #{name}"
   end
 end
