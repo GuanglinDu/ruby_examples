@@ -2,6 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails',             '4.2.11.1'
 gem 'sprockets',    '3.7.2'
-gem 'nokogiri',      '1.9.1'
+gem 'nokogiri',      '1.10.10'
 gem 'minitest',      '5.5.0'    
 gem 'rspec-rails',  '3.4.2'
